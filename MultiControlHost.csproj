@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7744975-E35F-4880-BF1E-0D58EAC9F362}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiControlHost</RootNamespace>
+    <AssemblyName>MultiControlHost</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ColorPicker">
+      <HintPath>F:\Users\Андрей.master\Documents\MSDN\Custom Windows Forms Controls - ColorPicker.NET\ColorPicker.NET\Application\bin\Debug\ColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Cyotek.Windows.Forms.ColorPicker">
+      <HintPath>..\!TESTS\Cyotek.Windows.Forms.ColorPicker\bin\Release\Cyotek.Windows.Forms.ColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>.\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddRemote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRemote.Designer.cs">
+      <DependentUpon>AddRemote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommunicationManager.cs" />
+    <Compile Include="confid.csd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>confid.csd</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionOptionsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionOptionsWindow.designer.cs">
+      <DependentUpon>ConnectionOptionsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindows.Designer.cs">
+      <DependentUpon>MainWindows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RGBTransition.cs" />
+    <Compile Include="SQLiteAdapter.cs" />
+    <Compile Include="TemperatureGraphWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemperatureGraphWindow.Designer.cs">
+      <DependentUpon>TemperatureGraphWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddRemote.resx">
+      <DependentUpon>AddRemote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionOptionsWindow.resx">
+      <DependentUpon>ConnectionOptionsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindows.resx">
+      <DependentUpon>MainWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TemperatureGraphWindow.resx">
+      <DependentUpon>TemperatureGraphWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="confid.csd">
+      <Generator>CsdFileGenerator</Generator>
+      <LastGenOutput>confid.csd.cs</LastGenOutput>
+    </None>
+    <None Include="confid.csd.config">
+      <DependentUpon>confid.csd</DependentUpon>
+    </None>
+    <None Include="confid.csd.diagram">
+      <DependentUpon>confid.csd</DependentUpon>
+    </None>
+    <None Include="confid.csd.xsd">
+      <DependentUpon>confid.csd</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
